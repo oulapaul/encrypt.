@@ -1,0 +1,186 @@
+import React, { useState } from 'react';  
+import ReactDOM from 'react-dom';  
+
+const App = () => {  
+    const [message, setMessage] = useState('');  
+    const [encryptedMessage, setEncryptedMessage] = useState('');  
+
+    // Simple encryption function using Base64 encoding  
+    const encryptMessage = (msg) => {  
+        return btoa(msg); // Base64 encoding for demonstration  
+    };  
+
+    const handleEncrypt = () => {  
+        const encrypted = encryptMessage(message);  
+        setEncryptedMessage(encrypted);  
+    };  
+
+    return (  
+        <div style={styles.container}>  
+            <h1>Secure Your Messages</h1>  
+            <textarea  
+                value={message}  
+                onChange={(e) => setMessage(e.target.value)}  
+                placeholder="Enter your message here..."  
+                rows="4"  
+                style={styles.textarea}  
+            />  
+            <br />  
+            <button style={styles.button} onClick={handleEncrypt}>  
+                Encrypt Message  
+            </button>  
+
+            {encryptedMessage && (  
+                <div style={styles.encryptedMessage}>  
+                    <p>Your Encrypted Message Link:</p>  
+                    <a   
+                        href="#"  
+                        style={styles.messageLink}  
+                        onClick={(e) => {  
+                            e.preventDefault();  
+                            alert(`Encrypted Message: ${encryptedMessage}`);  
+                        }}  
+                    >  
+                        View Encrypted Message  
+                    </a>  
+                </div>  
+            )}  
+        </div>  
+    );  
+};  
+{
+{
+const styles = {  
+    container: {  
+        fontFamily: 'Arial, sans-serif',  
+        textAlign: 'center',  
+        padding: '50px',  
+        backgroundColor: '#f4f4f9',  
+        color: '#333',  
+    },  
+    textarea: {  
+        width: '300px',  
+        padding: '10px',  
+        borderRadius: '5px',  
+        border: '1px solid #ccc',  
+        outline: 'none',  
+    },  
+    button: {  
+        marginTop: '10px',  
+        backgroundColor: '#007bff',  
+        color: 'white',  
+        padding: '10px 20px',  
+        border: 'none',  
+        borderRadius: '5px',  
+        fontSize: '16px',  
+        cursor: 'pointer',  
+        transition: 'background-color 0.3s ease',  
+    },  
+    encryptedMessage: {  
+        marginTop: '20px',  
+    },  
+    messageLink: {  
+        textDecoration: 'none',  
+        backgroundColor: '#17a2b8',  
+        color: 'white',  
+        padding: '10px 20px',  
+        borderRadius: '5px',  
+        fontSize: '16px',  
+        transition: 'background-color 0.3s ease',  
+    },  
+};  
+
+// Render the App component  
+ReactDOM.render(<App />, document.getElementById('root'));import React, { useState } from 'react';  
+import ReactDOM from 'react-dom';  
+
+const App = () => {  
+    const [message, setMessage] = useState('');  
+    const [encryptedMessage, setEncryptedMessage] = useState('');  
+
+    // Simple encryption function using Base64 encoding  
+    const encryptMessage = (msg) => {  
+        return btoa(msg); // Base64 encoding for demonstration  
+    };  
+
+    const handleEncrypt = () => {  
+        const encrypted = encryptMessage(message);  
+        setEncryptedMessage(encrypted);  
+    };  
+
+    return (  
+        <div style={styles.container}>  
+            <h1>Secure Your Messages</h1>  
+            <textarea  
+                value={message}  
+                onChange={(e) => setMessage(e.target.value)}  
+                placeholder="Enter your message here..."  
+                rows="4"  
+                style={styles.textarea}  
+            />  
+            <br />  
+            <button style={styles.button} onClick={handleEncrypt}>  
+                Encrypt Message  
+            </button>  
+
+            {encryptedMessage && (  
+                <div style={styles.encryptedMessage}>  
+                    <p>Your Encrypted Message Link:</p>  
+                    <a   
+                        href="#"  
+                        style={styles.messageLink}  
+                        onClick={(e) => {  
+                            e.preventDefault();  
+                            alert(`Encrypted Message: ${encryptedMessage}`);  
+                        }}  
+                    >  
+                        View Encrypted Message  
+                    </a>  
+                </div>  
+            )}  
+        </div>  
+    );  
+};  
+
+const styles = {  
+    container: {  
+        fontFamily: 'Arial, sans-serif',  
+        textAlign: 'center',  
+        padding: '50px',  
+        backgroundColor: '#f4f4f9',  
+        color: '#333',  
+    },  
+    textarea: {  
+        width: '300px',  
+        padding: '10px',  
+        borderRadius: '5px',  
+        border: '1px solid #ccc',  
+        outline: 'none',  
+    },  
+    button: {  
+        marginTop: '10px',  
+        backgroundColor: '#007bff',  
+        color: 'white',  
+        padding: '10px 20px',  
+        border: 'none',  
+        borderRadius: '5px',  
+        fontSize: '16px',  
+        cursor: 'pointer',  
+        transition: 'background-color 0.3s ease',  
+    },  
+    encryptedMessage: {  
+        marginTop: '20px',  
+    },  
+    messageLink: {  
+        textDecoration: 'none',  
+        backgroundColor: '#17a2b8',  
+        color: 'white',  
+        padding: '10px 20px',  
+        borderRadius: '5px',  
+        fontSize: '16px',  
+        transition: 'background-color 0.3s ease',  
+    },  
+};  
+
+// Render the App component  
+ReactDOM.render(<App />, document.getElementById('root'));
